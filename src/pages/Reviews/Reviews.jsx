@@ -7,7 +7,9 @@ const Reviews = () => {
   const { movieId } = useParams();
   const [reviewsFilm, setReviewsFilm] = useState([]);
   const location = useLocation();
-  useEffect(() => {
+  
+    
+    useEffect(() => {
     FilmsAPI.getReviewFilm(movieId).then(setReviewsFilm);
   }, [movieId]);
 
