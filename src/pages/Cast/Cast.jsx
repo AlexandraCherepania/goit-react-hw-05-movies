@@ -1,7 +1,7 @@
 import * as FilmsAPI from '../../components/Api/ApiMovie';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import image from '../../images/01.jpg';
+import image from '../../images/film-frame.jpg';
 import css from '../Cast/Cast.module.css';
 
 const Cast = () => {
