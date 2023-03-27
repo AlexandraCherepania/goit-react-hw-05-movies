@@ -53,3 +53,20 @@ export const getCastFilm = moveiID => {
     })
     .then(res => res.cast);
 };
+
+export const getReviewFilm = moveiID => {
+  const queryParams = new URLSearchParams({
+    api_key: API_KEY,
+  });
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${moveiID}/reviews?${queryParams}&language=en-US&page=1`
+  )
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+
+      return Promise.reject(new Error(`We don't have about this Movie`));
+    })
+    .then(res => res.results);
+};
